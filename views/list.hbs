@@ -1,0 +1,28 @@
+<a href="/">
+    <button type="button" class="btn btn-primary float-right">Formulario</button>
+</a>
+<h1 style="color: blue">Vista de Productos</h1>
+<br>
+
+{{#if productos}}
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr style="color:yellow">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Foto</th>
+            </tr>
+            {{#each productos}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nombre}}</td>
+                <td>${{this.precio}}</td>
+                <td><img src="{{this.url}}" alt="" width="100px"></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+{{else}}
+    <h3 class="alert alert-warning">No se encontraton productos</h3>
+{{/if}}
